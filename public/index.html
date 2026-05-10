@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>VIP Insider Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+/* ADD YOUR REAL PIXEL ID */
+fbq('init', '936223169236508');
+
+fbq('track', 'PageView');
+
+</script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:20px;
+  font-family:'Poppins',sans-serif;
+
+  overflow-y:auto;
+  overflow-x:hidden;
+
+
+background:
+radial-gradient(circle at top left,#ff4fd830 0%,transparent 35%),
+radial-gradient(circle at bottom right,#5b7cff25 0%,transparent 35%),
+linear-gradient(135deg,#f9fbff,#eef3ff);
+
+position:relative;
+}
+
+/* Background Glow */
+
+body::before,
+body::after{
+content:'';
+position:absolute;
+width:350px;
+height:350px;
+border-radius:50%;
+filter:blur(90px);
+opacity:.25;
+animation:float 8s infinite alternate ease-in-out;
+}
+
+body::before{
+background:#ff4fd8;
+top:-120px;
+left:-120px;
+}
+
+body::after{
+background:#5b7cff;
+bottom:-120px;
+right:-120px;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+100%{
+transform:translateY(30px);
+}
+}
+
+/* Card */
+
+.card{
+position:relative;
+z-index:2;
+
+width:100%;
+max-width:430px;
+
+padding:38px 28px;
+
+border-radius:36px;
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(22px);
+
+border:1px solid rgba(255,255,255,.8);
+
+box-shadow:
+0 20px 50px rgba(91,124,255,.15),
+0 10px 30px rgba(255,79,216,.08);
+
+overflow:hidden;
+text-align:center;
+}
+
+/* Premium Border */
+
+.card::before{
+content:'';
+position:absolute;
+inset:0;
+padding:1px;
+border-radius:36px;
+
+background:linear-gradient(
+135deg,
+rgba(255,79,216,.45),
+rgba(91,124,255,.25),
+rgba(255,255,255,.8));
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+}
+
+/* Logo */
+
+.logo-wrap{
+position:relative;
+width:110px;
+height:110px;
+margin:auto;
+margin-bottom:24px;
+}
+
+.logo-wrap::before{
+content:'';
+position:absolute;
+inset:-8px;
+border-radius:30px;
+background:linear-gradient(135deg,#ff4fd8,#5b7cff);
+filter:blur(18px);
+opacity:.4;
+}
+
+.logo{
+position:relative;
+width:100%;
+height:100%;
+
+border-radius:28px;
+overflow:hidden;
+
+background:#fff;
+
+border:3px solid rgba(255,255,255,.8);
+
+box-shadow:
+0 10px 25px rgba(91,124,255,.18);
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* Badge */
+
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+
+padding:8px 18px;
+
+border-radius:50px;
+
+background:rgba(91,124,255,.08);
+
+border:1px solid rgba(91,124,255,.12);
+
+color:#44507a;
+
+font-size:12px;
+font-weight:600;
+
+margin-bottom:20px;
+}
+
+/* Title */
+
+.title{
+font-size:36px;
+font-weight:800;
+line-height:1.2;
+
+background:linear-gradient(to right,#ff4fd8,#5b7cff);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:16px;
+}
+
+/* Description */
+
+.sub{
+font-size:15px;
+line-height:1.9;
+
+color:#5f6885;
+
+margin-bottom:30px;
+}
+
+/* Button */
+
+.btn{
+position:relative;
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+
+width:100%;
+
+padding:17px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+font-size:15px;
+font-weight:700;
+
+color:#fff;
+
+background:linear-gradient(135deg,#ff4fd8,#5b7cff);
+
+overflow:hidden;
+
+box-shadow:
+0 15px 35px rgba(91,124,255,.25);
+
+transition:.35s;
+}
+
+.btn::before{
+content:'';
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:100%;
+height:100%;
+
+background:rgba(255,255,255,.25);
+
+transform:skewX(-20deg);
+
+transition:.6s;
+}
+
+.btn:hover::before{
+left:120%;
+}
+
+.btn:hover{
+transform:translateY(-3px) scale(1.02);
+}
+
+/* Features */
+
+.features{
+margin-top:24px;
+
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.feature{
+padding:12px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.55);
+
+border:1px solid rgba(91,124,255,.08);
+
+font-size:13px;
+
+color:#5f6885;
+}
+
+/* Footer */
+
+.footer{
+margin-top:28px;
+
+font-size:11px;
+
+color:#98a2bb;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.card{
+padding:32px 22px;
+border-radius:30px;
+}
+
+.title{
+font-size:30px;
+}
+
+.sub{
+font-size:14px;
+}
+
+.btn{
+padding:15px;
+font-size:14px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- Logo -->
+<div class="logo-wrap">
+
+<div class="logo">
+<img src="y.jpeg" alt="logo">
+</div>
+
+</div>
+
+<!-- Badge -->
+<div class="badge">
+⭐ Premium Community Access
+</div>
+
+<!-- Title -->
+<div class="title">
+VIP Insider
+</div>
+
+<!-- Description -->
+<div class="sub">
+Connect with our Instagram community for exclusive updates, announcements, insider content, and premium support access.
+</div>
+
+<!-- Button -->
+<a
+href="https://ig.me/m/TIGER_75422"
+class="btn"
+target="_blank"
+onclick="fbq('track', 'Contact');"
+>
+
+📩 Message on Instagram
+
+</a>
+
+<!-- Features -->
+<div class="features">
+
+<div class="feature">
+⚡ Fast Response Support
+</div>
+
+<div class="feature">
+💬 Exclusive Community Access
+</div>
+
+<div class="feature">
+🔒 Safe & Secure Experience
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+© 2026 VIP INSIDER COMMUNITY
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+
