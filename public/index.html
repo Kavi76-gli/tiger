@@ -394,10 +394,10 @@ Connect with our Instagram community for exclusive updates, announcements, insid
 
 <!-- Button -->
 <a
-href="https://ig.me/m/TIGER_75422"
+href="https://ig.me/m/TIGER_25134"
 class="btn"
 target="_blank"
-onclick="fbq('track', 'Contact');"
+id="instaBtn"
 >
 
 📩 Message on Instagram
@@ -427,7 +427,14 @@ onclick="fbq('track', 'Contact');"
 </div>
 
 </div>
+<script>
+document.getElementById("instaBtn").addEventListener("click", function(e){
 
+    // fire lead event
+    fbq('track', 'Lead');
+
+});
+</script>
 </body>
 </html>
 
